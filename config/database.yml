@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
+  port: 5432
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+  database: tdd_assessment_development
+
+test:
+  <<: *default
+  database: tdd_assessment_test
