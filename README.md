@@ -15,26 +15,14 @@ Make sure to have the above versions installed on your system.
 
 - **PostgreSQL**: Ensure PostgreSQL is installed and running on your system. This project uses PostgreSQL as the database. [It will without database as well, we just made a service. still I have integrated the database]
 
-## Configuration
+## To start the Rails server, run the following command:
+- ** rails server
 
-To configure the database connection, update `config/database.yml` with your PostgreSQL credentials.
+## To install dependencies
+- ** bundle install
 
-Example configuration:
+## To run the RSpec tests
+- ** rspec
 
-```yaml
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  username: postgres
-  password: postgres
-  host: localhost
-  port: 5432
-  pool: 5
-
-development:
-  <<: *default
-  database: tdd_assessment_development
-
-test:
-  <<: *default
-  database: tdd_assessment_test
+## To run a specific test file:
+- ** rspec spec/path/to/file_spec.rb
