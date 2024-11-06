@@ -2,10 +2,16 @@ class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
 
-    return numbers.to_i if numbers.match?(/^\d+$/)
+    if numbers.start_with?("//")
+      delimiter, numbers = numbers[2..].split("\n", 2)
+      
+      delimiter_regex = delimiter.scan(/\[([^\]]+)\]/).flatten.map { |delim| Regexp.escape(delim) }.join('|')
+      delimiters_regex = Regexp.new(delimiter_regex)
+    else
+      delimiters_regex = /,|\n/
+    end
 
-    nums = numbers.split(",").map(&:to_i)
+    nums = numbers.split(delimiters_regex).map(&:to_i)
     nums.sum
   end
 end
-
