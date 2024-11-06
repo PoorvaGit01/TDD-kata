@@ -12,6 +12,7 @@ class StringCalculator
     end
 
     nums = numbers.split(delimiters_regex).map(&:to_i)
+    nums.reject! { |num| num > 1000 }
     nums.sum
   end
 end
