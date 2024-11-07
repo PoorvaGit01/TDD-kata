@@ -15,6 +15,12 @@ Make sure to have the above versions installed on your system.
 
 - **PostgreSQL**: Ensure PostgreSQL is installed and running on your system. This project uses PostgreSQL as the database. [It will without database as well, we just made a service. still I have integrated the database]
 
+## File Path
+- ** app/lib/string_calculator.rb
+
+## Spec File Path
+- ** spec/lib/string_calculator_spec.rb
+
 ## To start the Rails server, run the following command:
 - ** rails server
 
